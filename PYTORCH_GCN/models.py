@@ -7,8 +7,9 @@ class GCN(nn.Module):
     def __init__(self, nfeat, nhid, nclass, dropout):
         super(GCN, self).__init__()
 
-        self.gc1 = GraphConvolution(nfeat, nhid)
+        self.gc1 = GraphConvolution(nfeat, nhid)xw
         self.gc2 = GraphConvolution(nhid, nclass)
+        #semantic data 연산 
         self.dropout = dropout
 
     def forward(self, x, adj):
